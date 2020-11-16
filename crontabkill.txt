@@ -1,0 +1,10 @@
+Startup command
+$ crontab -e
+
+View the jobs running in the background
+$ ps -o pid,sess,cmd afx | egrep -A20 "( |/)cron( -f)?$"
+
+Stop script running in background
+$ pkill -s <PID>
+
+Note: <PID> is a number
