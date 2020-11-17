@@ -19,12 +19,10 @@ player = Instance.media_player_new()
 pixels = Pixels() #To control the RGB LED
 
 BUTTON_PIN = 17 #Power off button on top of ReSpeaker Hat
-PIRR_PIN = 12 #PIR Sensor Pin connection on ReSpeaker Hat
-PIRL_PIN = 13 #PIR Sensor Pin connection on ReSpeaker Hat
+PIR_PIN = 12 #PIR Sensor Pin connection on ReSpeaker Hat
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(BUTTON_PIN, GPIO.IN)
-GPIO.setup(PIRR_PIN, GPIO.IN)
-GPIO.setup(PIRL_PIN, GPIO.IN)
+GPIO.setup(PIR_PIN, GPIO.IN)
 
 #Function for blinking LED
 def ledBlink():
@@ -69,7 +67,7 @@ while True:
         stop_threads = True
         break
     
-    motion = 1 if (GPIO.input(PIRR_PIN)==1 or GPIO.input(PIRL_PIN)==1) else 0 #Detect motion
+    motion = GPIO.input(PIR_PIN) #Detect motion
     
     state = 0 if motion==0 else state #Update the current motion state
     
