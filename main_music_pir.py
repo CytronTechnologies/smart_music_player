@@ -62,7 +62,9 @@ while True:
     if GPIO.input(BUTTON_PIN) == 0:
         pixels.wakeup()
         pixels.speak()
-        playSound('sounds/poweroff.mp3')
+        media = vlc.MediaPlayer("sounds/poweroff.mp3")
+        media.play()
+        time.sleep(3)
         pixels.off()
         stop_threads = True
         break
