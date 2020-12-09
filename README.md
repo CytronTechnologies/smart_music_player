@@ -1,7 +1,8 @@
-# smart_music_player
-Smart Music Player with Raspberry Pi
+# Smart Music Player with Raspberry Pi
 Tutorial page: https://tutorial.cytron.io/?p=37550
+
 Controller: Raspberry Pi Zero WH
+
 Python version: 3.8
 
 Please check the tutorial page for steps on hardware and software installation.
